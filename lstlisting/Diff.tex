@@ -1,0 +1,19 @@
+\definecolor{darkgreen}{cmyk}{0.7, 0, 1, 0.5}
+\definecolor{NavyBlue}{cmyk}{0.94,0.54,0,0}
+
+\lstdefinelanguage{diff}
+{
+    morekeywords={diff, @@, ---, +++, +, -},
+    sensitive=false,
+    morecomment=[l]{//},
+    morecomment=[l][\color{darkgreen}]{+},
+    morecomment=[l][\color{NavyBlue}]{@@},
+    morecomment=[l][\color{black}]{\ },
+    morecomment=[l][\color{red}]{-},
+    morecomment=[l][\color{blue}]{---},
+    morecomment=[l][\color{blue}]{+++},
+    morecomment=[l][\color{black}]{diff},
+    morecomment=[l][\color{black}]{*},
+    morecomment=[l][\color{black}]{\t},
+    morestring=[b]",
+}
