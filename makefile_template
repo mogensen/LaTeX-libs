@@ -1,2 +1,3 @@
 include ~/LaTeX-libs/makefile
 MF="Master"
+BIB="references.bib"
