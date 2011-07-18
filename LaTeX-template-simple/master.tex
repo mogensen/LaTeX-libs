@@ -1,0 +1,42 @@
+% Dokumentklassen sættes til memoir
+\documentclass[a4paper,11pt,article,oneside,final]{memoir}
+
+% Sproget sættes til dansk og orddeling indlæses
+% \usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[danish]{babel}
+
+% Matematiske symboler og fede tegn i ligninger
+\usepackage{amsmath, amssymb, bm, mathtools, float}
+
+% Tabeller og søjler
+\usepackage{array, booktabs, dcolumn}
+\newcolumntype{d}[1]{D{,}{,}{#1}} % Justering under komma
+
+% Figurer
+\usepackage{graphicx, caption, subfig}
+\captionsetup{font=small,labelfont=bf}
+
+% Algorithmer
+% \usepackage{algorithm}
+% \usepackage{algorithmic}
+\usepackage{listings}
+
+\usepackage{amsthm}
+\newtheorem{prop}{Proposition}
+
+\pagestyle{companion}
+%\title{Introduktion til Matematisk Modellering}
+\title{Subject}
+\author{
+		Compulsory Assignments x\\
+		Frederik Mogensen, 20080923 \\ \\
+}
+
+\begin{document}
+    \maketitle
+
+    \input{content/index}
+
+\end{document}
