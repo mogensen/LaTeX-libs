@@ -6,7 +6,7 @@ pdf:
 	if [ -f $(BIB) ]; then bibtex $(MF); fi
 	pdflatex $(MF)
 	pdflatex $(MF)
-	open -a Skim $(MF).pdf
+	open $(MF).pdf
 
 clean:
 	rm -f *.aux
