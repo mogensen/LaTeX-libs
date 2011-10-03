@@ -1,0 +1,68 @@
+% Dokumentklassen sættes til memoir
+\documentclass[a4paper,11pt,article,oneside,final]{memoir}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% Matematiske symboler og fede tegn i ligninger
+\usepackage{amsmath, amssymb, bm, mathtools, float}
+\usepackage{longtable}
+
+% Tabeller og søjler
+\usepackage{array, booktabs, dcolumn}
+\newcolumntype{d}[1]{D{,}{,}{#1}} % Justering under komma
+
+% Figurer
+\usepackage{graphicx, caption, subfig}
+\captionsetup{font=small,labelfont=bf}
+
+% PDF include
+\usepackage{pdfpages}
+
+% Bibtex
+\usepackage{natbib}
+
+% Algorithmer
+% \usepackage{algorithm}
+% \usepackage{algorithmic}
+\usepackage{listings}
+\usepackage{lscape}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\pagestyle{companion}
+\title{Course Name}
+\author{
+		{\noindent\HUGE\bfseries Project Name} \\ \\ \\
+		%		Peter Urbak, 20081130 \\
+		%		Jakob Schultz-Nielsen, 20061951 \\
+		%		Morten Rasmussen, 20060914 \\ 
+		%		Lasse Højgaard, 20080848 \\
+		Frederik Mogensen, 20080923 \\
+}
+\date{31. maj 2011}
+
+\begin{document}
+	\maketitle
+
+	\newpage
+	\tableofcontents
+	\cleardoublepage
+
+	\input{content/index}
+
+
+% 	\newpage
+% 	\input{content/bilag.tex}
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}
+
