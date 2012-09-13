@@ -1,0 +1,108 @@
+\documentclass[13pt]{beamer}
+
+% ###################################### %
+\newcommand{\Date}		{12. September 2012}
+\newcommand{\Author}	{Frederik Mogensen}
+\newcommand{\Title}		{Outsourced similarity search on metric data}
+\newcommand{\Subject}	{Multidimensional databases}
+\newcommand{\Faculty}	{Computer Science}
+\newcommand{\Color}		{gray}
+% ###################################### %
+
+\usetheme{default}
+\setbeamertemplate{navigation symbols}{} %gets rid of navigation symbols
+\setbeamertemplate{itemize items}[circle]
+\setbeamercolor{titlelike}{fg=dark\Color}
+\setbeamercolor{item}{fg=\Color}
+\setbeamercolor{normal text}{fg=\Color} 
+
+\usebackgroundtemplate{
+	\vbox to \paperheight{\vspace{0.4cm}
+	\hspace{1.0cm}\includegraphics[width=5cm]{img/au.png}\hfill\vfill}
+}
+
+%\setbeamersize{text margin left=.5cm}
+%\setbeamersize{text margin right=.5cm}
+
+%\setbeamertemplate{headline}{} %gets rig of headline
+\setbeamertemplate{frametitle}
+{
+	\begin{flushleft}
+		\vspace{0.8cm}
+		{\Large \textbf{\textmd{\insertframetitle}}}\\
+		\vspace{-0.4cm}
+		\line(1,0){100}\hfill
+		\vspace{-0.6cm}
+	\end{flushleft}
+}
+
+\setbeamertemplate{footline}{
+	\begin{minipage}[b]{0.88\linewidth}
+		\flushright{\tiny{\MakeUppercase{\Author}\\
+		\vspace{-0.5cm}\MakeUppercase{\Title}}}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{1.1\linewidth}
+
+		\vspace{-2em}
+		\hspace{\fill}\line(1,0){200}\hspace{0.2cm}\line(1,0){62}
+		\vspace{0.2cm}
+
+		\flushright{\tiny{\insertframenumber\\ \vspace{-0.5cm}\Date}}
+	\end{minipage}
+
+	\vspace{0.7cm}
+}
+
+\usepackage{beamerfontthemeprofessionalfonts}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\usepackage{multirow}
+\usepackage{booktabs}
+
+\begin{document}
+
+% ----------------------------------------------------------------------------------------------------
+% title
+% ----------------------------------------------------------------------------------------------------
+
+\begin{frame}[plain]
+	\hfill
+	\begin{minipage}[]{0.4\linewidth}
+		\flushright{\tiny{\Faculty\\ \vspace{-0.2cm} \Date}}
+	\end{minipage}
+	\\
+	\vspace{1.cm}
+	\huge{\MakeUppercase{\Title}}
+	\hfill
+	\linethickness{3pt}
+	\flushright{
+		\vspace{-0.9cm}
+		\line(1,0){230}
+		\hfill
+	}
+	\linethickness{1pt}
+
+	\begin{minipage}[b]{\linewidth}
+		\Large{\Author} \hfill
+	\end{minipage}
+
+	\vfill
+	\vspace{2cm}
+	\begin{minipage}[b]{1.0\linewidth}
+		\hfill \LARGE{\MakeUppercase{\Subject}}
+	\end{minipage}
+\end{frame}
+
+% ----------------------------------------------------------------------------------------------------
+% introduction
+% ----------------------------------------------------------------------------------------------------
+
+\input{content/index}
+
+\end{document}
