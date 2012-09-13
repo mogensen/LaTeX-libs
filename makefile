@@ -1,12 +1,12 @@
-MF="master"
+MF=master
 BIB="references.bib"
 
 pdf:
-	pdflatex $(MF)
-	if [ -f $(BIB) ]; then bibtex $(MF); fi
-	pdflatex $(MF)
-	pdflatex $(MF)
-	open $(MF).pdf
+	pdflatex "$(MF)"
+	if [ -f $(BIB) ]; then bibtex "$(MF)"; fi
+	pdflatex "$(MF)"
+	pdflatex "$(MF)"
+	open "$(MF).pdf"
 
 clean:
 	rm -f *.aux
