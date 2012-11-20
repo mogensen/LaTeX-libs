@@ -1,30 +1,55 @@
-\documentclass[13pt]{beamer}
+\documentclass[svgnames,13pt]{beamer}
+\usepackage{ifthen}
+\newboolean{UseNotes}
 
 % ###################################### %
-\newcommand{\Date}		{12. September 2012}
+\newcommand{\Date}		{September 12 2012}
 \newcommand{\Author}	{Frederik Mogensen}
 \newcommand{\Title}		{Outsourced similarity search on metric data}
+\newcommand{\subTitle}	{Mironov, Pandey, Reingold \& Vadhan}
 \newcommand{\Subject}	{Multidimensional databases}
 \newcommand{\Faculty}	{Computer Science}
-\newcommand{\Color}		{gray}
+\setboolean{UseNotes}	{true}
+\newcommand{\ColorHead}	{DarkSlateGrey}
+\newcommand{\ColorRest}	{darkgray}
+%% Color choices on page 38 in
+%% http://www.math.washington.edu/tex-archive/macros/latex/contrib/xcolor/xcolor.pdf
 % ###################################### %
+
+
+%% Use notes ?
+\ifthenelse{\boolean{UseNotes}}
+	{
+		%%% Notes
+		\usepackage{pgfpages}
+		\setbeameroption{show notes}
+		\setbeameroption{show notes on second screen=right}
+		\setbeamertemplate{note page}{
+		\bigskip
+		\insertsubsectionnavigation{\textwidth}
+		\insertnote
+	}
+	{
+		%%% No Notes
+	}
+}
 
 \usetheme{default}
 \setbeamertemplate{navigation symbols}{} %gets rid of navigation symbols
 \setbeamertemplate{itemize items}[circle]
-\setbeamercolor{titlelike}{fg=dark\Color}
-\setbeamercolor{item}{fg=\Color}
-\setbeamercolor{normal text}{fg=\Color} 
+\setbeamercolor{titlelike}{fg=\ColorHead}
+\setbeamercolor{item}{fg=\ColorRest}
+\setbeamercolor{normal text}{fg=\ColorRest}
 
+%%% Background
 \usebackgroundtemplate{
 	\vbox to \paperheight{\vspace{0.4cm}
 	\hspace{1.0cm}\includegraphics[width=5cm]{img/au.png}\hfill\vfill}
 }
 
-%\setbeamersize{text margin left=.5cm}
-%\setbeamersize{text margin right=.5cm}
-
-%\setbeamertemplate{headline}{} %gets rig of headline
+% ------------------------------------------------------------------------------
+% frametitle
+% ------------------------------------------------------------------------------
 \setbeamertemplate{frametitle}
 {
 	\begin{flushleft}
@@ -36,15 +61,18 @@
 	\end{flushleft}
 }
 
+% ------------------------------------------------------------------------------
+% footer
+% ------------------------------------------------------------------------------
 \setbeamertemplate{footline}{
 	\begin{minipage}[b]{0.88\linewidth}
 		\flushright{\tiny{\MakeUppercase{\Author}\\
-		\vspace{-0.5cm}\MakeUppercase{\Title}}}
+		\vspace{-0.5cm}\MakeUppercase{\Title}}} \\
 	\end{minipage}
 	\hfill
 	\begin{minipage}[b]{1.1\linewidth}
 
-		\vspace{-2em}
+		\vspace{-3em}
 		\hspace{\fill}\line(1,0){200}\hspace{0.2cm}\line(1,0){62}
 		\vspace{0.2cm}
 
@@ -67,9 +95,9 @@
 
 \begin{document}
 
-% ----------------------------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 % title
-% ----------------------------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 
 \begin{frame}[plain]
 	\hfill
@@ -78,12 +106,15 @@
 	\end{minipage}
 	\\
 	\vspace{1.cm}
-	\huge{\MakeUppercase{\Title}}
+	\huge{\MakeUppercase{\Title}} \\
+	\vspace{0.2cm}\small{\subTitle}
+	\vspace{0.5cm}
 	\hfill
 	\linethickness{3pt}
 	\flushright{
-		\vspace{-0.9cm}
+		\vspace{-1.0cm}
 		\line(1,0){230}
+		\vspace{0.2cm}
 		\hfill
 	}
 	\linethickness{1pt}
@@ -99,9 +130,9 @@
 	\end{minipage}
 \end{frame}
 
-% ----------------------------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 % introduction
-% ----------------------------------------------------------------------------------------------------
+% ------------------------------------------------------------------------------
 
 \input{content/index}
 
